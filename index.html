@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#33231d">
+<meta name="description" content="BIOFROST — кофейня-пекарня в Тирасполе. Свежий хлеб, выпечка, десерты и предзаказ.">
+<title>BIOFROST — кофейня-пекарня</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coffee:#33231d;--coffee2:#51382d;--cream:#f7f1e8;--paper:#fffdf9;--beige:#e8d8c4;--caramel:#b77a4d;--muted:#806f63;--line:#e9dfd3;--shadow:0 18px 50px rgba(57,38,28,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--paper);color:var(--coffee);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1160px,calc(100% - 44px));margin:auto}.topbar{background:var(--coffee);color:#f9f2e9;font-size:12px;letter-spacing:.08em;padding:9px 0}.topbar .container{display:flex;justify-content:space-between;gap:16px}.header{position:sticky;top:0;z-index:20;background:rgba(255,253,249,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(80,56,45,.08)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;letter-spacing:.17em;font-size:23px}.brand span{color:var(--caramel)}.brand small{display:block;font-size:8px;letter-spacing:.31em;font-weight:500;color:var(--muted);margin-top:3px}.navlinks{display:flex;align-items:center;gap:29px;font-size:13px;color:#604d42}.navlinks a{transition:color .2s}.navlinks a:hover{color:var(--caramel)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:3px;background:var(--coffee);color:#fffaf4;padding:14px 21px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:transform .25s,background .25s,box-shadow .25s}.nav-cta:hover,.btn:hover{background:var(--caramel);transform:translateY(-2px);box-shadow:0 10px 22px #8a593533}.menu-toggle{display:none;background:none;border:0;color:var(--coffee);font-size:25px;cursor:pointer}
+.hero{min-height:620px;display:grid;grid-template-columns:1fr 1fr;background:var(--cream);overflow:hidden}.hero-copy{padding:100px max(44px,calc((100vw - 1160px)/2)) 90px max(44px,calc((100vw - 1160px)/2));padding-right:55px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.eyebrow{font-size:10px;letter-spacing:.23em;text-transform:uppercase;color:var(--caramel);font-weight:700}.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(48px,5.5vw,76px);line-height:1.04;margin:22px 0 20px;letter-spacing:-.035em}.hero h1 em{color:var(--caramel);font-style:normal}.hero p{max-width:420px;color:#78665a;line-height:1.8;font-size:14px;margin:0 0 31px}.hero-actions{display:flex;align-items:center;gap:22px}.text-link{font-size:12px;border-bottom:1px solid var(--caramel);padding-bottom:5px}.hero-image{min-height:620px;position:relative;background:#8c674c}.hero-image img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,28,20,.12),transparent 50%)}.hero-note{position:absolute;z-index:1;bottom:30px;right:30px;background:var(--paper);padding:17px 22px;box-shadow:var(--shadow);font-family:'Playfair Display',serif;font-size:17px}.hero-note small{display:block;font:10px 'DM Sans';color:var(--muted);letter-spacing:.13em;text-transform:uppercase;margin-top:5px}
+section{padding:100px 0}.section-head{text-align:center;max-width:610px;margin:0 auto 45px}.section-head .eyebrow{margin-bottom:13px}.section-head h2{font:500 clamp(34px,4vw,48px) 'Playfair Display',serif;margin:0 0 14px}.section-head p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.about-photo{height:470px;position:relative}.about-photo img{width:100%;height:100%;object-fit:cover}.about-photo:before{content:"";position:absolute;left:-15px;bottom:-15px;width:65%;height:65%;border:1px solid var(--beige);z-index:-1}.about-copy h2{font:500 44px/1.12 'Playfair Display',serif;margin:16px 0}.about-copy p{font-size:14px;line-height:1.9;color:var(--muted)}.about-stats{display:flex;gap:38px;margin-top:32px}.stat strong{font:500 27px 'Playfair Display';display:block}.stat span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.menu-section{background:var(--cream)}.category-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:32px}.tab{border:1px solid #d8c8b7;background:transparent;color:var(--coffee2);padding:11px 17px;border-radius:30px;font-size:12px;cursor:pointer;transition:.2s}.tab:hover,.tab.active{background:var(--coffee);border-color:var(--coffee);color:#fff}.menu-panel{max-width:850px;margin:auto;background:var(--paper);padding:35px 42px;box-shadow:var(--shadow)}.menu-panel h3{font:500 25px 'Playfair Display';margin:0 0 22px}.menu-list{display:grid;grid-template-columns:1fr 1fr;column-gap:45px}.menu-item{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:13px}.menu-item span:first-child{color:#655349}.price{font-weight:700;white-space:nowrap;color:var(--coffee)}.menu-note{text-align:center;color:var(--muted);font-size:11px;margin:20px 0 0}
+.popular-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product-card{background:var(--paper);box-shadow:0 8px 30px rgba(57,38,28,.07);transition:transform .3s,box-shadow .3s;overflow:hidden}.product-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}.product-card img{width:100%;height:235px;object-fit:cover;display:block}.product-info{padding:20px 21px}.product-info small{color:var(--caramel);text-transform:uppercase;letter-spacing:.15em;font-size:9px}.product-info h3{font:500 22px 'Playfair Display';margin:8px 0}.product-info p{color:var(--muted);font-size:12px;margin:0}
+.gallery{background:var(--cream)}.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:220px 220px;gap:14px}.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.gallery-item{overflow:hidden}.gallery-item:hover img{transform:scale(1.045)}.gallery-item:first-child{grid-row:span 2}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:stretch}.contact-info h2{font:500 43px 'Playfair Display';margin:12px 0 28px}.contact-line{padding:15px 0;border-bottom:1px solid var(--line)}.contact-line small{display:block;color:var(--caramel);font-size:9px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:7px}.contact-line p,.contact-line a{margin:0;font-size:14px;color:#665348}.map{min-height:390px;background:#e9dfd3;overflow:hidden}.map iframe{width:100%;height:100%;min-height:390px;border:0;filter:grayscale(.25) sepia(.15)}
+.order-section{background:var(--coffee);color:#fff8ef}.order-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:start}.order-copy .eyebrow{color:#d5a77f}.order-copy h2{font:500 45px/1.1 'Playfair Display';margin:17px 0}.order-copy p{font-size:13px;line-height:1.9;color:#d1c0b4}.order-form{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#d5c4b8}.field input,.field select,.field textarea{width:100%;background:#49352b;border:1px solid #695044;color:#fff8ef;padding:14px;border-radius:2px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:#d3a078}.field textarea{min-height:100px;resize:vertical}.field select option{background:#49352b}.order-form .btn{background:#c18a60;color:#241710;grid-column:1/-1;justify-self:start}.form-message{grid-column:1/-1;color:#e7c6a8;font-size:12px;line-height:1.6;min-height:18px}
+footer{background:#241914;color:#d9c9bd;padding:28px 0}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}.footer-brand{font-weight:700;letter-spacing:.18em;color:#fff}.footer-inner a{color:#d8a77e}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:78px;left:0;right:0;background:var(--paper);padding:22px;flex-direction:column;gap:19px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.nav-cta{display:none}.menu-toggle{display:block}.hero{grid-template-columns:1fr}.hero-copy{padding:75px 30px}.hero-image{min-height:380px}.about,.contact-grid,.order-wrap{grid-template-columns:1fr;gap:35px}.about-photo{height:350px}.popular-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:190px 190px 190px}.gallery-item:first-child{grid-row:span 2}.menu-list{grid-template-columns:1fr}.order-wrap{gap:20px}}
+@media(max-width:520px){.container{width:calc(100% - 32px)}.topbar .container{font-size:9px}.nav{height:68px}.brand{font-size:20px}.navlinks{top:68px}.hero-copy{padding:65px 24px}.hero h1{font-size:49px}.hero-image{min-height:310px}.hero-note{right:14px;bottom:14px}.hero-actions{gap:14px;flex-wrap:wrap}.hero-actions .btn{padding:13px 15px}section{padding:72px 0}.about-stats{gap:20px}.stat strong{font-size:23px}.menu-panel{padding:25px 19px}.popular-grid{grid-template-columns:1fr}.product-card img{height:230px}.gallery-grid{gap:8px;grid-template-rows:140px 140px 140px}.order-form{grid-template-columns:1fr}.field.full,.order-form .btn,.form-message{grid-column:1}.footer-inner{flex-direction:column;text-align:center}.contact-info h2{font-size:38px}}
+
+/* BIOFROST video hero + visual menu */
+.hero{display:block;min-height:650px;position:relative;background:#251912;isolation:isolate}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,18,13,.82),rgba(35,22,16,.48) 56%,rgba(35,22,16,.18));z-index:-1}
+.hero-copy{min-height:650px;width:min(1160px,calc(100% - 44px));margin:auto;padding:100px 0; color:#fff8ef}
+.hero-copy .eyebrow{color:#e3b88e}.hero h1 em{color:#e5b68b}.hero p{color:#f0e3d8}.hero .text-link{color:#fff8ef;border-color:#d5a77f}
+.hero-note{color:var(--coffee)}
+.menu-panel{max-width:1120px}
+.menu-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.menu-item{display:block;padding:0;border:1px solid var(--line);background:#fff;border-radius:5px;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.menu-item:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(57,38,28,.12)}
+.menu-item img{display:block;width:100%;height:138px;object-fit:cover;background:#eadfd3}
+.menu-item .menu-item-body{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:12px}
+.menu-item .menu-name{font-size:12px;line-height:1.45;color:#655349}
+.menu-item .price{font-size:12px}
+.telegram-btn{display:inline-flex;align-items:center;gap:9px;background:#229ed9!important;color:#fff!important}
+.telegram-btn:hover{background:#1688c0!important}
+.telegram-hint{grid-column:1/-1;font-size:11px;line-height:1.6;color:#d8c5b8;margin:0}
+@media(max-width:800px){.menu-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-copy{padding:75px 0;min-height:560px}.hero{min-height:560px}}
+@media(max-width:520px){.menu-list{grid-template-columns:1fr 1fr;gap:10px}.menu-item img{height:112px}.menu-item .menu-item-body{padding:9px;display:block}.menu-item .price{display:block;margin-top:5px}.hero-copy{min-height:520px}.hero{min-height:520px}}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>ТИРАСПОЛЬ · ПОКРОВСКАЯ, 98 · ТЦ «РЕАЛ»</span><span>КАЖДЫЙ ДЕНЬ · 7:00–22:00</span></div></div>
+<header class="header"><div class="container nav">
+<a class="brand" href="#home">BIO<span>FROST</span><small>COFFEE · BAKERY</small></a>
+<nav class="navlinks" id="navlinks"><a href="#about">О нас</a><a href="#menu">Меню</a><a href="#popular">Популярное</a><a href="#gallery">Галерея</a><a href="#contacts">Контакты</a></nav>
+<a class="nav-cta" href="#order">Предзаказ</a><button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">☰</button>
+</div></header>
+<main>
+<section class="hero" id="home">
+<video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=85">
+<source src="https://videos.pexels.com/video-files/5674625/5674625-uhd_4096_2160_30fps.mp4" type="video/mp4">
+</video>
+<div class="hero-copy"><span class="eyebrow">Свежая выпечка каждый день</span><h1>Вкус, который<br>делает день <em>теплее.</em></h1><p>Ароматный кофе, свежий хлеб и любимая выпечка — загляните в BIOFROST за маленьким удовольствием каждый день.</p><div class="hero-actions"><a class="btn" href="#menu">Посмотреть меню</a><a class="text-link" href="#about">Познакомиться с нами</a></div></div>
+</section>
+<section id="about"><div class="container about reveal"><div class="about-photo"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1000&q=85" alt="Свежие круассаны в пекарне"></div><div class="about-copy"><span class="eyebrow">Немного о нас</span><h2>Место, где пахнет уютом и свежей выпечкой</h2><p>BIOFROST — кофейня-пекарня для тех, кто ценит простые радости: тёплый хлеб, аппетитные десерты и приятную паузу среди дел. Выбирайте что-нибудь к кофе, берите выпечку с собой или оформляйте предзаказ.</p><div class="about-stats"><div class="stat"><strong>7:00</strong><span>Начинаем день</span></div><div class="stat"><strong>22:00</strong><span>Ждём вас вечером</span></div><div class="stat"><strong>Каждый</strong><span>День свежая выпечка</span></div></div></div></div></section>
+<section class="menu-section" id="menu"><div class="container"><div class="section-head reveal"><span class="eyebrow">Выбирайте любимое</span><h2>Меню BIOFROST</h2><p>Хлеб, сладкая и сытная выпечка — найдётся что-нибудь для любого настроения.</p></div><div class="category-tabs" id="categoryTabs"></div><div class="menu-panel reveal"><h3 id="menuTitle">Хлеб</h3><div class="menu-list" id="menuList"></div><p class="menu-note">Цены указаны в рублях. Наличие отдельных позиций уточняйте в кофейне.</p></div></div></section>
+<section id="popular"><div class="container"><div class="section-head reveal"><span class="eyebrow">Любимчики гостей</span><h2>Популярное</h2><p>Небольшая подборка того, что особенно хорошо сочетается с чашкой кофе.</p></div><div class="popular-grid">
+<article class="product-card reveal"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=85" alt="Круассан"><div class="product-info"><small>Сладкая выпечка</small><h3>Круассан</h3><p>Хрустящие слои и нежная начинка.</p></div></article>
+<article class="product-card reveal"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="Шоколадный торт"><div class="product-info"><small>Десерт</small><h3>Шоколадное настроение</h3><p>Для тех, кому хочется чего-то особенного.</p></div></article>
+<article class="product-card reveal"><img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=85" alt="Свежий хлеб"><div class="product-info"><small>Из печи</small><h3>Свежий хлеб</h3><p>Простой вкус, к которому хочется вернуться.</p></div></article>
+</div></div></section>
+<section class="gallery" id="gallery"><div class="container"><div class="section-head reveal"><span class="eyebrow">Атмосфера BIOFROST</span><h2>Галерея вкуса</h2><p>Немного красоты, хрустящих корочек и сладких моментов.</p></div><div class="gallery-grid reveal">
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=85" alt="Хлебная выпечка"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=800&q=85" alt="Булочки"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=85" alt="Круассаны"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85" alt="Торт"></div>
+<div class="gallery-item"><img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=800&q=85" alt="Хлеб на столе"></div>
+</div></div></section>
+<section id="contacts"><div class="container contact-grid"><div class="contact-info reveal"><span class="eyebrow">Будем рады вас видеть</span><h2>Заходите на ароматный кофе</h2><div class="contact-line"><small>Адрес</small><p>Тирасполь, ул. Покровская, 98<br>ТЦ «Реал»</p></div><div class="contact-line"><small>Телефон</small><a href="tel:+37377763222">777 63222</a></div><div class="contact-line"><small>График работы</small><p>Ежедневно · 7:00–22:00</p></div><div class="contact-line"><small>Instagram</small><a href="https://www.instagram.com/biofrost_pmr/" target="_blank" rel="noopener">@biofrost_pmr ↗</a></div></div><div class="map reveal"><iframe title="Карта: BIOFROST, Тирасполь, Покровская 98" src="https://www.google.com/maps?q=Tiraspol%2C%20Pokrovskaya%2098&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div></section>
+<section class="order-section" id="order"><div class="container order-wrap"><div class="order-copy reveal"><span class="eyebrow">К вашему времени</span><h2>Оформить предзаказ</h2><p>Заполните форму, чтобы подготовить заказ заранее. Укажите удобный способ связи в комментарии, если это важно.</p><p>Телефон кофейни: <strong>777 63222</strong></p></div><form class="order-form reveal" id="orderForm">
+<div class="field"><label for="customerName">Ваше имя *</label><input id="customerName" name="name" placeholder="Как к вам обращаться?" required></div>
+<div class="field"><label for="customerPhone">Телефон *</label><input id="customerPhone" name="phone" type="tel" placeholder="+373 ..." required></div>
+<div class="field full"><label for="product">Что хотите заказать? *</label><select id="product" name="product" required><option value="">Выберите товар</option></select></div>
+<div class="field full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Количество, желаемое время и другие пожелания"></textarea></div>
+<button class="btn telegram-btn" type="submit">➤ Заказать в Telegram</button>
+<p class="telegram-hint">После нажатия откроется Telegram с готовым текстом заказа. Вы сможете выбрать чат BIOFROST и отправить заявку.</p>
+<div class="form-message" id="formMessage" aria-live="polite"></div>
+</form></div></section>
+</main>
+<footer><div class="container footer-inner"><span class="footer-brand">BIOFROST · COFFEE & BAKERY</span><span>Тирасполь, Покровская, 98 · 7:00–22:00</span><a href="https://www.instagram.com/biofrost_pmr/" target="_blank" rel="noopener">Instagram ↗</a><span>© BIOFROST</span></div></footer>
+<script>
+const catalog = {
+"Хлеб":[["Чиабатта",18],["Хлебец с ядром подсолнуха",18],["Хлеб «Солодовый»",18],["Хлеб «Луковый»",18],["Хлеб «Балтийский»",30],["Багет «Сельский»",20],["Багет «Французский»",18]],
+"Сладкая выпечка":[["Круассан с вишней",30],["Круассан с шоколадом",30],["Круассан с ванилью",30],["Круассан «Микс»",30],["Круассан ореховый",35],["Ролл Нью-Йорк с вишней",35],["Ролл Нью-Йорк с шоколадом",35],["Ролл Нью-Йорк с фисташкой",35],["Бомболони с ванилью",25],["Бомболони с шоколадом",25],["Эклер шоколадный",25],["Эклер ванильный",25],["Чизкейк",30],["Медовик",40],["Наполеон",40],["Штрудель с яблоком",25],["Рулетик с яблоком и орехом",25],["Меренговый рулет",35],["Донатс",20],["Пирожное Шу",28],["Тарт вишнёвый",25],["Профитроль",13],["Крендель",20],["Ушко",25],["Пирожное безе",15],["Меренги",15],["Синнабон",35],["Печенье овсяное",35]],
+"Несладкая выпечка":[["Пицца «4 сыра»",30],["Пицца «Верона»",25],["Пицца «Пепперони»",25],["Сэндвич с карбонатом",40],["Сэндвич с салями",40],["Чиабатта с курицей",40],["Пирог Сибирский",25],["Пирог Осетинский",35],["Сосиска в тесте",30],["Слойка с курицей",28],["Киш с курицей и грибами",40],["Треугольник с вишней",30],["Треугольник с картошкой",20],["Треугольник с творогом",25],["Треугольник с тыквой",20],["Треугольник с картошкой и мясом",25]],
+"Вертуты":[["С картошкой",25],["С капустой",25],["С тыквой",25],["С картошкой и грибами",25],["С капустой и грибами",25],["С курицей и грибами",25],["С творогом",30]],
+"Замороженная продукция":[["Багет сельский — 2 шт.",38],["Хлеб балтийский — 1 шт.",35],["Сосиска в тесте — 2 шт.",45],["Синнабон — 2 шт.",35],["Булочки для мини-бургеров — 4 шт.",30],["Круассан классический",null]]
+};
+const tabs=document.getElementById('categoryTabs'), title=document.getElementById('menuTitle'), list=document.getElementById('menuList'), product=document.getElementById('product');
+Object.keys(catalog).forEach((category,i)=>{const b=document.createElement('button');b.className='tab'+(i===0?' active':'');b.textContent=category;b.type='button';b.addEventListener('click',()=>showCategory(category,b));tabs.appendChild(b)});
+
+const menuPhotos = {
+"Хлеб":[
+"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1534620808146-d33bb39128b2?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=700&q=80"
+],
+"Сладкая выпечка":[
+"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=700&q=80"
+],
+"Несладкая выпечка":[
+"https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1600896730375-7c5c7d6b3d6c?auto=format&fit=crop&w=700&q=80"
+],
+"Вертуты":[
+"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=700&q=80"
+],
+"Замороженная продукция":[
+"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=700&q=80",
+"https://images.unsplash.com/photo-1586444248902-2f64eddc13df?auto=format&fit=crop&w=700&q=80"
+]
+};
+function showCategory(category,button){
+ title.textContent=category;list.innerHTML='';
+ catalog[category].forEach(([name,price],index)=>{
+  const card=document.createElement('article');card.className='menu-item';
+  const img=document.createElement('img');img.src=menuPhotos[category][index%menuPhotos[category].length];img.alt=name;img.loading='lazy';
+  img.onerror=()=>{img.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=700&q=80'};
+  const body=document.createElement('div');body.className='menu-item-body';
+  const n=document.createElement('span');n.className='menu-name';n.textContent=name;
+  const p=document.createElement('span');p.className='price';p.textContent=price===null?'Цена уточняется':price+' руб.';
+  body.append(n,p);card.append(img,body);list.appendChild(card);
+ });
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));button.classList.add('active');
+}
+showCategory('Хлеб',tabs.querySelector('button'));
+Object.entries(catalog).forEach(([category,items])=>items.forEach(([name])=>{const o=document.createElement('option');o.value=name;o.textContent=name+' — '+category;product.appendChild(o)}));
+document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
+document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('orderForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const f=e.currentTarget;
+ if(!f.reportValidity()) return;
+ const data=new FormData(f);
+ const message=[
+  '🥐 ЗАКАЗ BIOFROST',
+  'Имя: '+data.get('name'),
+  'Телефон: '+data.get('phone'),
+  'Товар: '+data.get('product'),
+  'Комментарий: '+(data.get('comment')||'—'),
+  'Адрес получения: Тирасполь, ул. Покровская, 98 (ТЦ «Реал»)'
+ ].join('\n');
+ const telegramUrl='https://t.me/share/url?url='+encodeURIComponent('https://www.instagram.com/biofrost_pmr/')+'&text='+encodeURIComponent(message);
+ window.open(telegramUrl,'_blank','noopener');
+ document.getElementById('formMessage').textContent='Открылся Telegram с подготовленной заявкой. Выберите чат BIOFROST и нажмите «Отправить».';
+});
+</script>
+</body></html>
