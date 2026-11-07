@@ -147,22 +147,37 @@ Object.entries(catalog).forEach(([category,items])=>items.forEach(([name])=>{con
 document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));
 document.querySelectorAll('#navlinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navlinks').classList.remove('open')));
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.getElementById('orderForm').addEventListener('submit',e=>{
+document.getElementById('orderForm').addEventListener('submit', async e=>{
  e.preventDefault();
  const f=e.currentTarget;
  if(!f.reportValidity()) return;
+ const button=f.querySelector('button[type="submit"]');
+ const messageEl=document.getElementById('formMessage');
+ button.disabled=true;
+ button.textContent='Отправляем...';
+ messageEl.textContent='';
  const data=new FormData(f);
- const message=[
-  '🥐 ЗАКАЗ BIOFROST',
-  'Имя: '+data.get('name'),
-  'Телефон: '+data.get('phone'),
-  'Товар: '+data.get('product'),
-  'Комментарий: '+(data.get('comment')||'—'),
-  'Адрес получения: Тирасполь, ул. Покровская, 98 (ТЦ «Реал»)'
- ].join('\n');
- const telegramUrl='https://t.me/share/url?url='+encodeURIComponent('https://www.instagram.com/biofrost_pmr/')+'&text='+encodeURIComponent(message);
- window.open(telegramUrl,'_blank','noopener');
- document.getElementById('formMessage').textContent='Открылся Telegram с подготовленной заявкой. Выберите чат BIOFROST и нажмите «Отправить».';
+ try{
+  const response=await fetch('/api/order',{
+   method:'POST',
+   headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({
+    name:data.get('name'),
+    phone:data.get('phone'),
+    product:data.get('product'),
+    comment:data.get('comment')||''
+   })
+  });
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok) throw new Error(result.error||'Не удалось отправить заявку.');
+  messageEl.textContent='Спасибо! Заявка отправлена. Мы свяжемся с вами.';
+  f.reset();
+ }catch(error){
+  messageEl.textContent=error.message||'Ошибка отправки. Попробуйте ещё раз или позвоните нам.';
+ }finally{
+  button.disabled=false;
+  button.textContent='➤ Заказать в Telegram';
+ }
 });
 </script>
 </body></html>
