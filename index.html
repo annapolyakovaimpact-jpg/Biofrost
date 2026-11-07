@@ -39,8 +39,8 @@ footer{background:#241914;color:#d9c9bd;padding:28px 0}.footer-inner{display:fle
 .menu-item .menu-item-body{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:12px}
 .menu-item .menu-name{font-size:12px;line-height:1.45;color:#655349}
 .menu-item .price{font-size:12px}
-.telegram-btn{display:inline-flex;align-items:center;gap:9px;background:#229ed9!important;color:#fff!important}
-.telegram-btn:hover{background:#1688c0!important}
+.submit-btn{display:inline-flex;align-items:center;gap:9px}
+.submit-btn:hover{filter:brightness(.94)}
 .telegram-hint{grid-column:1/-1;font-size:11px;line-height:1.6;color:#d8c5b8;margin:0}
 @media(max-width:800px){.menu-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-copy{padding:75px 0;min-height:560px}.hero{min-height:560px}}
 @media(max-width:520px){.menu-list{grid-template-columns:1fr 1fr;gap:10px}.menu-item img{height:112px}.menu-item .menu-item-body{padding:9px;display:block}.menu-item .price{display:block;margin-top:5px}.hero-copy{min-height:520px}.hero{min-height:520px}}
@@ -81,7 +81,7 @@ footer{background:#241914;color:#d9c9bd;padding:28px 0}.footer-inner{display:fle
 <div class="field"><label for="customerPhone">Телефон *</label><input id="customerPhone" name="phone" type="tel" placeholder="+373 ..." required></div>
 <div class="field full"><label for="product">Что хотите заказать? *</label><select id="product" name="product" required><option value="">Выберите товар</option></select></div>
 <div class="field full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Количество, желаемое время и другие пожелания"></textarea></div>
-<button class="btn telegram-btn" type="submit">➤ Отправить заявку</button>
+<button class="btn submit-btn" type="submit">Отправить заявку</button>
 <p class="telegram-hint">После нажатия заявка отправится нам автоматически. Telegram у вас не откроется.</p>
 <div class="form-message" id="formMessage" aria-live="polite"></div>
 </form></div></section>
@@ -176,7 +176,7 @@ document.getElementById('orderForm').addEventListener('submit', async e=>{
   messageEl.textContent=error.message||'Ошибка отправки. Попробуйте ещё раз или позвоните нам.';
  }finally{
   button.disabled=false;
-  button.textContent='➤ Отправить заявку';
+  button.textContent='Отправить заявку';
  }
 });
 </script>
