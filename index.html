@@ -81,8 +81,8 @@ footer{background:#241914;color:#d9c9bd;padding:28px 0}.footer-inner{display:fle
 <div class="field"><label for="customerPhone">Телефон *</label><input id="customerPhone" name="phone" type="tel" placeholder="+373 ..." required></div>
 <div class="field full"><label for="product">Что хотите заказать? *</label><select id="product" name="product" required><option value="">Выберите товар</option></select></div>
 <div class="field full"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Количество, желаемое время и другие пожелания"></textarea></div>
-<button class="btn telegram-btn" type="submit">➤ Заказать в Telegram</button>
-<p class="telegram-hint">После нажатия откроется Telegram с готовым текстом заказа. Вы сможете выбрать чат BIOFROST и отправить заявку.</p>
+<button class="btn telegram-btn" type="submit">➤ Отправить заявку</button>
+<p class="telegram-hint">После нажатия заявка отправится нам автоматически. Telegram у вас не откроется.</p>
 <div class="form-message" id="formMessage" aria-live="polite"></div>
 </form></div></section>
 </main>
@@ -176,7 +176,7 @@ document.getElementById('orderForm').addEventListener('submit', async e=>{
   messageEl.textContent=error.message||'Ошибка отправки. Попробуйте ещё раз или позвоните нам.';
  }finally{
   button.disabled=false;
-  button.textContent='➤ Заказать в Telegram';
+  button.textContent='➤ Отправить заявку';
  }
 });
 </script>
